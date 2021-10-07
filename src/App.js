@@ -1,25 +1,103 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import logo from "./logo.jpg";
+import {
+    BsPersonFill,
+    BsFillLockFill,
+    BsFillEyeFill,
+    BsFillEyeSlashFill,
+} from "react-icons/bs";
+import { Container, Row, Col } from "reactstrap";
+import React, { useState } from "react";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [userName, setuserName] = useState("");
+    const [pass, setpass] = useState("");
+    const [showpass, setshowpass] = useState(false);
+    return (
+        <div className="App">
+            <Container>
+                <Row xs="1" sm="2" md="3">
+                    <Col></Col>
+                    <Col>
+                        <div className="d-flex justify-content-between mt-3 mb-5">
+                            <p>Đăng nhập</p>
+                            <p>MY HUBT</p>
+                        </div>
+                        <div className="logo d-flex justify-content-center ">
+                            <img
+                                src={logo}
+                                className="App-logo mt-3 mb-3"
+                                alt="logo"
+                            />
+                        </div>
+                        <div className="user d-flex mt-5 py-1">
+                            <BsPersonFill size="20" className="iconUser" />
+                            <input
+                                className=""
+                                type="text"
+                                placeholder="Mã sinh viên của bạn"
+                                onChange={(e) => {
+                                    setuserName(e.target.value);
+                                    console.log(e.target.value);
+                                }}
+                            />
+                        </div>
+                        <div className="pass user d-flex mt-4 py-1">
+                            <BsFillLockFill size="20" className="iconUser" />
+                            <input
+                                type={showpass ? "text" : "password"}
+                                className=""
+                                placeholder="Mật khẩu mặc định là myhubt"
+                                onChange={(e) => {
+                                    setpass(e.target.value);
+                                    console.log(e.target.value);
+                                }}
+                            />
+                            <button onClick={(_) => setshowpass((old) => !old)}>
+                                {showpass ? (
+                                    <BsFillEyeSlashFill size={20} />
+                                ) : (
+                                    <BsFillEyeFill size={20} />
+                                )}
+                            </button>
+                        </div>
+
+                        <div className="check mx-3 d-flex justify-content-between mt-5">
+                            <div className="d-flex align-items-center">
+                                <input type="checkbox" />
+                                <label className="ms-2 mb-1">
+                                    Lưu mật khẩu
+                                </label>
+                            </div>
+                            <div>
+                                <button
+                                    onClick={(e) => {
+                                        let a = localStorage.getItem(
+                                            "user",
+                                            userName
+                                        );
+                                        alert(a);
+                                    }}
+                                >
+                                    Bạn quên mật khẩu
+                                </button>
+                            </div>
+                        </div>
+                        <div className="login d-flex justify-content-center  mt-5 py-2">
+                            <button
+                                className="text-light"
+                                onClick={(e) => {
+                                    localStorage.setItem("user", userName);
+                                }}
+                            >
+                                ĐĂNG NHẬP
+                            </button>
+                        </div>
+                    </Col>
+                    <Col></Col>
+                </Row>
+            </Container>
+        </div>
+    );
 }
 
 export default App;
