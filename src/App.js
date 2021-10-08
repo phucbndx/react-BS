@@ -18,7 +18,7 @@ function App() {
                 <Row xs="1" sm="2" md="3">
                     <Col></Col>
                     <Col>
-                        <div className="d-flex justify-content-between mt-3 mb-5">
+                        <div className="d-flex justify-content-between mt-3 mb-5 fw-bold fs-5">
                             <p>Đăng nhập</p>
                             <p>MY HUBT</p>
                         </div>
@@ -29,7 +29,7 @@ function App() {
                                 alt="logo"
                             />
                         </div>
-                        <div className="user d-flex mt-5 py-1">
+                        <div className="user d-flex mt-5 py-2">
                             <BsPersonFill size="20" className="iconUser" />
                             <input
                                 className=""
@@ -41,7 +41,7 @@ function App() {
                                 }}
                             />
                         </div>
-                        <div className="pass user d-flex mt-4 py-1">
+                        <div className="pass user d-flex mt-4 py-2">
                             <BsFillLockFill size="20" className="iconUser" />
                             <input
                                 type={showpass ? "text" : "password"}
@@ -82,7 +82,7 @@ function App() {
                                 </button>
                             </div>
                         </div>
-                        <div className="login d-flex justify-content-center  mt-5 py-2">
+                        <div className="login d-flex justify-content-center mt-5 py-2 mx-3">
                             <button
                                 className="text-light"
                                 onClick={(e) => {
