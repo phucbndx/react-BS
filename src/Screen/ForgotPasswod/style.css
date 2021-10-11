@@ -1,0 +1,16 @@
+body,
+#root,
+.ForgotPassword {
+    height: 100vh;
+}
+.cancel {
+    background-color: #dadada;
+    border-radius: 4px;
+}
+.continue {
+    background-color: #0d6efd;
+    border-radius: 4px;
+}
+.mail input {
+    background-color: #fff;
+}
