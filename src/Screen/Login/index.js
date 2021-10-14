@@ -8,6 +8,7 @@ import {
     BsFillEyeSlashFill,
 } from "react-icons/bs";
 import { Container, Row, Col } from "reactstrap";
+import { Link } from "react-router-dom";
 let Login = () => {
     const [userName, setuserName] = useState("");
     const [pass, setpass] = useState("");
@@ -71,15 +72,17 @@ let Login = () => {
 
                             <div>
                                 <button
-                                    onClick={(e) => {
-                                        let a = localStorage.getItem(
-                                            "user",
-                                            userName
-                                        );
-                                        alert(a);
-                                    }}
+                                // onClick={(e) => {
+                                //     let a = localStorage.getItem(
+                                //         "user",
+                                //         userName
+                                //     );
+                                //     alert(a);
+                                // }}
                                 >
-                                    Bạn quên mật khẩu
+                                    <Link to="ForgotPassword" className="quen">
+                                        Bạn quên mật khẩu
+                                    </Link>
                                 </button>
                             </div>
                         </div>
@@ -90,7 +93,10 @@ let Login = () => {
                                     localStorage.setItem("user", userName);
                                 }}
                             >
-                                ĐĂNG NHẬP
+                                <Link to="Pest" className="quen">
+                                    {" "}
+                                    ĐĂNG NHẬP
+                                </Link>
                             </button>
                         </div>
                     </Col>

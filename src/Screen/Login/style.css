@@ -49,3 +49,7 @@ button:focus {
     background-color: #44acf3;
     padding: 0px;
 }
+.quen {
+    text-decoration: none;
+    color: black;
+}

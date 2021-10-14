@@ -1,6 +1,6 @@
 import { Breadcrumb, BreadcrumbItem } from "reactstrap";
-import "../pest/style.css";
-import avatar from "../pest/avatar.jpg";
+import "./style.css";
+import avatar from "../Pest/avatar.jpg";
 import {
     BsListUl,
     BsFillHouseDoorFill,
