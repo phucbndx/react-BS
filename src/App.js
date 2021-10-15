@@ -15,8 +15,6 @@ function App() {
             <Route path="/Pest" component={Pest} />
             <Route path="/Login" component={Login} />
             <Route path="/ForgotPassword" component={ForgotPassword} />
-
-            <Login />
         </Router>
     );
 }

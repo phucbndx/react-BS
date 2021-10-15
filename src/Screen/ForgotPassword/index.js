@@ -142,7 +142,7 @@ let ForgotPassword = () => {
                                 <NhapUsername
                                     userName={userName}
                                     onBtnClick={(_) => {
-                                        if (userName === "") {
+                                        if (userName == "") {
                                             alert("đéo có mail");
                                         } else {
                                             setisconfirm(_);
